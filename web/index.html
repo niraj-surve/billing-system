@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Billing System</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.0.272/jspdf.debug.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              mulish: "Mulish, sans-serif",
+              opensans: "Open Sans, sans-serif",
+            },
+            colors: {
+              pink: "#FF715B",
+              yellow: "#F9CB40",
+              dark: "#011936",
+              primary: "#7380ec",
+              warning: "#ffbb55",
+              danger: "#ff7782",
+              success: "#41f1b6",
+              info: "#dce1eb",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-gray-100">
+    <div class="flex flex-col py-10">
+      <h1 class="text-4xl font-black uppercase text-center text-primary mb-6">
+        Welcome to the Billing System
+      </h1>
+      <div class="grid grid-cols-2 px-4 gap-8">
+        <div>
+          <span
+            class="font-black text-2xl font-opensans text-center text-yellow w-full block mb-6"
+            >Hotel Menu</span
+          >
+          <div
+            id="menu"
+            class="flex flex-col items-center gap-4 text-xs px-4 py-8 h-[450px] overflow-y-auto"
+          >
+            <!-- Menu items will be dynamically added here -->
+          </div>
+        </div>
+        <div>
+          <div class="mt-6">
+            <h2 class="text-xl font-bold text-center mb-6">Selected Items</h2>
+            <h2
+              class="grid grid-cols-2 mb-4 bg-dark text-white py-2 rounded-lg"
+            >
+              <span class="text-lg font-medium text-center w-full">Item</span>
+              <span class="text-lg font-medium text-center w-full"
+                >Quantity</span
+              >
+            </h2>
+            <ol
+              id="selected-items"
+              class="list-decimal flex flex-col h-[300px] pr-2 overflow-y-auto gap-4"
+            >
+              <!-- Selected items will be dynamically added here -->
+            </ol>
+          </div>
+          <div class="mt-6">
+            <h2 class="text-xl font-bold">
+              Total Bill: ₹<span id="total-price">0</span>
+            </h2>
+          </div>
+          <button
+            id="generate-receipt-btn"
+            class="fixed bottom-[20px] right-[115px] px-2 py-3 text-sm text-white border border-primary hover:text-primary btn-transition rounded-lg hover:bg-white bg-primary font-bold"
+          >
+            <i class="fa-solid fa-receipt mr-1"></i>
+            Generate Receipt
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="eel.js"></script>
+    <script src="scripts/main.js"></script>
+  </body>
+</html>

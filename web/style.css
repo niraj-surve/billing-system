@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;700&family=Open+Sans:wght@300;400;500;700;800&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+#menu{
+    box-shadow: 1px 1px 5px gray;
+}
+
+#menu::-webkit-scrollbar,
+#selected-items::-webkit-scrollbar{
+    width: 5px;
+    position: absolute;
+    right: 5px;
+    margin-left: 2px;
+}
+
+#menu::-webkit-scrollbar-track,
+#selected-items::-webkit-scrollbar-track {
+    background-color: gray
+}
+
+#menu::-webkit-scrollbar-thumb,
+#selected-items::-webkit-scrollbar-thumb {
+    background-color: #F9CB40;
+}
+
+.btn-transition{
+    transition: all .3s ease-in;
+}
